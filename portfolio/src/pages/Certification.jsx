@@ -2,6 +2,14 @@ import React, { useState } from 'react';
 
 const certifications = [
   {
+    title: "Microsoft Power BI for Beginners",
+    color: "blue-400",
+    border: "blue-400",
+    provider: "Simpli Learn | 2026",
+    link: "https://simpli-web.app.link/e/QAAQlvgLr4b",
+    category: "Business Analytics"
+  },
+  {
     title: "6th Student Symposium on Research about Genetic AI with QA",
     color: "purple-400",
     border: "purple-400",

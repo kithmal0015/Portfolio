@@ -25,7 +25,7 @@ import figmaLogo from '../assets/figma-logo.png';
 import qaAutomationLogo from '../assets/qaa-logo.png';
 import baLogo from '../assets/ba-logo.png';
 import cloudaiLogo from '../assets/cloudai-logo.png';
-import EnhancedBackgroundAnimations from './Animation';
+// import EnhancedBackgroundAnimations from './Animation';
 
 
 
@@ -171,7 +171,7 @@ const Portfolio = () => {
 
   return (
     <div className="bg-gray-900 text-white min-h-screen relative overflow-hidden">
-      <EnhancedBackgroundAnimations />
+      {/* <EnhancedBackgroundAnimations /> */}
      
       <nav className="fixed top-0 w-full bg-gray-900/90 backdrop-blur-md z-50 border-b border-gray-800/50">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
