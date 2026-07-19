@@ -315,7 +315,7 @@ const Portfolio = () => {
           </div>
         </div>
 
-        <style jsx>{`
+        <style>{`
           @keyframes avatarStroke {
             to { stroke-dashoffset: 0; }
           }
@@ -502,4 +502,3 @@ const Portfolio = () => {
 };
 
 export default Portfolio;
-

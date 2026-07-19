@@ -1,10 +1,12 @@
 {
+  "homepage": "https://kithmal0015.github.io/Portfolio",
   "name": "my-portfolio-root",
   "private": true,
   "scripts": {
     "dev": "npm --prefix portfolio run dev",
     "build": "npm --prefix portfolio run build",
-    "deploy": "npm run build && powershell -NoProfile -ExecutionPolicy Bypass -File .\\scripts\\deploy.ps1"
+    "deploy": "npm run build && powershell -NoProfile -ExecutionPolicy Bypass -File .\\scripts\\deploy.ps1",
+    "predeploy": "npm run build"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

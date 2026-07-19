@@ -93,7 +93,7 @@ const EnhancedBackgroundAnimations = () => {
     <CircuitBoard />
       
       {/* CSS Animations */}
-      <style jsx>{`
+      <style>{`
         @keyframes circuitPulse {
           0%, 100% {
             stroke-opacity: 0.1;

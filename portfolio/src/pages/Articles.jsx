@@ -1,6 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const articles = [
+   {
+    title: 'Power BI: නම අහලා තිබ්බට ඇත්තටම දැනගෙන හිටියද?',
+    date: 'July 18, 2026',
+    summary: 'covers over 30 industry-standard QA tools across 10 categories, including Test Management, Automation, API Testing, Performance, Security, and more.',
+    link: 'https://www.linkedin.com/posts/kithmal-tharinda-kodithuwakku_powerbi-dataanalytics-businessintelligence-ugcPost-7484147512019197952-_Cz1/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEKp9_cBmmVh48zOpP6tm313g89F8CtWbc4'
+  },
+  {
+    title: 'Quality Assurance Tools Reference Guide',
+    date: 'July 16, 2026',
+    summary: 'covers over 30 industry-standard QA tools across 10 categories, including Test Management, Automation, API Testing, Performance, Security, and more.',
+    link: 'https://www.linkedin.com/feed/update/urn:li:groupPost:60879-7483375099274776576/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEKp9_cBmmVh48zOpP6tm313g89F8CtWbc4'
+  },
+  {
+    title: 'ඩිජිටල් ස්වෛරීත්වය උදෙසා Open Source තාක්ෂණයන් වෙත මාරුවෙන යුරෝපය',
+    date: 'July 13, 2026',
+    summary: 'යුරෝපයේ රටවල් කිහිපයක් Microsoft වැනි Proprietary තාක්ෂණයන්ගෙන් ඉවත් වී Nextcloud, Linux සහ අනෙකුත් Open Source තාක්ෂණයන් වෙත මාරු වීම ',
+    link: 'https://www.linkedin.com/posts/kithmal-tharinda-kodithuwakku_digitalsovereignty-opensource-dataprivacy-ugcPost-7482355962415075328-3_Qp/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEKp9_cBmmVh48zOpP6tm313g89F8CtWbc4'
+  },
   {
     title: 'Would you also like to know about authentication and authorization?',
     date: 'February 15, 2025',
@@ -39,39 +57,45 @@ const articles = [
   },
 ];
 
-const Articles = () => (
-  <section id="articles" className="font-Libertinus-Sans py-20 bg-gradient-to-br from-gray-800/60 via-gray-900/80 to-gray-800/60 relative">
-    <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-8 relative z-10">
-      <div className="text-center mb-12">
-        <h2 className="font-cinzel text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Articles</h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto animate-pulse"></div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {articles.slice(0, 3).map((article, idx) => (
-          <div key={idx} className="bg-gray-900/80 border border-gray-800 rounded-xl px-10 py-6 shadow-lg hover:shadow-blue-400/30 transition-shadow duration-300 group flex flex-col justify-between min-h-[220px] max-w-[400px] w-full" style={{height: '200px'}}>
-            <div>
-              <h3 className="text-md font-semibold mb-1 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent group-hover:text-blue-400 transition-colors duration-300">{article.title}</h3>
-              <small className="text-gray-400 mb-1 block">{article.date}</small>
-              <p className="text-gray-300 mb-1 line-clamp-2">{article.summary}</p>
+const Articles = () => {
+  const [showAll, setShowAll] = useState(false);
+  const initialCount = 6;
+  const displayedArticles = showAll ? articles : articles.slice(0, initialCount);
+
+  return (
+    <section id="articles" className="font-Libertinus-Sans py-20 bg-gradient-to-br from-gray-800/60 via-gray-900/80 to-gray-800/60 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-8 relative z-10">
+        <div className="text-center mb-12">
+          <h2 className="font-cinzel text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Articles</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto animate-pulse"></div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {displayedArticles.map((article, idx) => (
+            <div key={idx} className="bg-gray-900/80 border border-gray-800 rounded-xl px-10 py-6 shadow-lg hover:shadow-blue-400/30 transition-shadow duration-300 group flex flex-col justify-between min-h-[220px] max-w-[400px] w-full" style={{height: '200px'}}>
+              <div>
+                <h3 className="text-md font-semibold mb-1 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent group-hover:text-blue-400 transition-colors duration-300">{article.title}</h3>
+                <small className="text-gray-400 mb-1 block">{article.date}</small>
+                <p className="text-gray-300 mb-1 line-clamp-2">{article.summary}</p>
+              </div>
+              <a href={article.link} target="_blank" rel="noopener noreferrer" className="inline-block px-4 py-1 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 text-white font-medium hover:from-purple-500 hover:to-pink-500 transition-all duration-300 self-end">Read more</a>
             </div>
-            <a href={article.link} target="_blank" rel="noopener noreferrer" className="inline-block px-4 py-1 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 text-white font-medium hover:from-purple-500 hover:to-pink-500 transition-all duration-300 self-end">Read more</a>
+          ))}
+        </div>
+
+        {articles.length > initialCount && (
+          <div className="text-center mt-10">
+            <button
+              className="px-6 py-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 text-white font-semibold shadow-lg hover:scale-105 transition-all"
+              onClick={() => setShowAll(!showAll)}
+            >
+              {showAll ? "Show Less" : "Show More"}
+            </button>
           </div>
-        ))}
+        )}
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-        {articles.slice(3, 6).map((article, idx) => (
-          <div key={idx} className="bg-gray-900/80 border border-gray-800 rounded-xl px-10 py-6 shadow-lg hover:shadow-blue-400/30 transition-shadow duration-300 group flex flex-col justify-between min-h-[220px] max-w-[400px] w-full" style={{height: '200px'}}>
-            <div>
-              <h3 className="text-md font-semibold mb-1 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent group-hover:text-blue-400 transition-colors duration-300">{article.title}</h3>
-              <small className="text-gray-400 mb-1 block">{article.date}</small>
-              <p className="text-gray-300 mb-1 line-clamp-2">{article.summary}</p>
-            </div>
-            <a href={article.link} target="_blank" rel="noopener noreferrer" className="inline-block px-4 py-1 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 text-white font-medium hover:from-purple-500 hover:to-pink-500 transition-all duration-300 self-end">Read more</a>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default Articles;
