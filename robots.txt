@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kithmal0015.github.io/Portfolio/sitemap.xml
